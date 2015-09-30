@@ -64,6 +64,16 @@ class PositionType extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getAccountabilities()
+    {
+        return $this->hasMany(Accountability::className(), ['id' => 'accountability_id'])
+            ->viaTable(PositionTypeAccountability::tableName(), ['position_type_id' => 'id']);
+    }
+
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getPositions()
     {
         return $this->hasMany(Position::className(), ['type_id' => 'id']);

@@ -29,7 +29,9 @@ class Accountability extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['name'], 'string', 'max' => 128]
+            [['description'], 'required'],
+            [['name'], 'string', 'max' => 128],
+            [['description'], 'string']
         ];
     }
 
@@ -41,6 +43,7 @@ class Accountability extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'description' => 'Description'
         ];
     }
 

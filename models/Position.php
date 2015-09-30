@@ -43,7 +43,7 @@ class Position extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'description' => 'Description',
-            'type_id' => 'Type ID',
+            'type_id' => 'Type',
         ];
     }
 

@@ -31,7 +31,10 @@ class Position extends \yii\db\ActiveRecord
         return [
             [['description'], 'string'],
             [['type_id'], 'required'],
-            [['type_id'], 'integer']
+            [['type_id'], 'integer'],
+            [['name'], 'required'],
+            [['name'], 'string', 'max' => 128],
+
         ];
     }
 
@@ -44,6 +47,7 @@ class Position extends \yii\db\ActiveRecord
             'id' => 'ID',
             'description' => 'Description',
             'type_id' => 'Type',
+            'Name' => 'Position Name',
         ];
     }
 
@@ -54,4 +58,6 @@ class Position extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PositionType::className(), ['id' => 'type_id']);
     }
+
+
 }

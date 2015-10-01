@@ -30,8 +30,8 @@ class Employee extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['first_name', 'last_name', 'position_type_id'], 'required'],
-            [['position_type_id'], 'integer'],
+            [['first_name', 'last_name', 'position_id'], 'required'],
+            [['position_id'], 'integer'],
             [['first_name', 'last_name'], 'string', 'max' => 128]
         ];
     }
@@ -45,15 +45,15 @@ class Employee extends \yii\db\ActiveRecord
             'id' => 'ID',
             'first_name' => 'First Name',
             'last_name' => 'Last Name',
-            'position_type_id' => 'Position Type ID',
+            'position_id' => 'Position',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPositionType()
+    public function getPosition()
     {
-        return $this->hasOne(PositionType::className(), ['id' => 'position_type_id']);
+        return $this->hasOne(Position::className(), ['id' => 'position_id']);
     }
 }

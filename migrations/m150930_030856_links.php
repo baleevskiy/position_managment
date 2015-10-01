@@ -13,12 +13,12 @@ class m150930_030856_links extends Migration
         ]);
         $this->addForeignKey('postype_junction',
             'position_type__accountabilities', 'position_type_id',
-            'position_types', 'id'
+            'position_types', 'id', 'CASCADE'
             );
 
         $this->addForeignKey('accountability_junction',
             'position_type__accountabilities', 'accountability_id',
-            'accountabilities', 'id'
+            'accountabilities', 'id', 'CASCADE'
         );
 
 

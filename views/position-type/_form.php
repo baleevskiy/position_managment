@@ -19,9 +19,7 @@ use yii\widgets\ActiveForm;
     <?php
     $list = ArrayHelper::map(Accountability::find()->all(), 'id', 'name');
     $checked = ArrayHelper::getColumn($model->accountabilities, 'id');
-
-
-    echo Html::checkboxList('accountabilities', $checked, $list);
+    echo Html::checkboxList('PositionType[accountability_list]', $checked, $list);
 
     ?>
 

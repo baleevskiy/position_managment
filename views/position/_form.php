@@ -20,6 +20,7 @@ use app\models\PositionType;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'name')->input('text') ?>
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'type_id')->dropDownList(

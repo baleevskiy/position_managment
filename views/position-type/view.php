@@ -1,5 +1,7 @@
 <?php
 
+use yii\data\ArrayDataProvider;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -31,5 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
         ],
     ]) ?>
+    <h2>Accountabilities</h2>
+    <?= GridView::widget([
+        'dataProvider' => new ArrayDataProvider(['allModels' => $model->accountabilities]),
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'name',
+            'description',
+        ],
+    ])
+    ?>
 
 </div>

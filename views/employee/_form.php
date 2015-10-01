@@ -1,5 +1,7 @@
 <?php
 
+use app\models\Position;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -16,7 +18,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'position_type_id')->textInput() ?>
+    <?= $form->field($model, 'position_id')->dropDownList(
+        ArrayHelper::map(
+            Position::find()->all(),
+            'id',
+            'name'
+        )
+    );?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

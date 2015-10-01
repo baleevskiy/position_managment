@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "479407875c975e7dbee0aefcb85e62d5",
+    "hash": "51ecb98ea265510a6e082938eefa0cc8",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -368,6 +368,55 @@
                 "mailer"
             ],
             "time": "2015-06-06 14:19:39"
+        },
+        {
+            "name": "voskobovich/yii2-many-many-behavior",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voskobovich/ManyToManyBehavior.git",
+                "reference": "500c78f9df026424214130c33443a36cfe29dbd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voskobovich/ManyToManyBehavior/zipball/500c78f9df026424214130c33443a36cfe29dbd3",
+                "reference": "500c78f9df026424214130c33443a36cfe29dbd3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "yiisoft/yii2-codeception": "~2.0"
+            },
+            "type": "yii2-behavior",
+            "autoload": {
+                "psr-4": {
+                    "voskobovich\\behaviors\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaly Voskobovich",
+                    "email": "vitaly@voskobovich.com",
+                    "homepage": "http://voskobovich.com"
+                }
+            ],
+            "description": "This behavior makes it easy to maintain relations many-to-many in the your ActiveRecord model.",
+            "homepage": "https://github.com/voskobovich/ManyToManyBehavior",
+            "keywords": [
+                "Active Record",
+                "Behavior",
+                "many-to-many",
+                "relation",
+                "yii2"
+            ],
+            "time": "2015-08-21 08:05:55"
         },
         {
             "name": "yiisoft/yii2",

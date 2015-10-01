@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use voskobovich\behaviors\ManyToManyBehavior;
 use Yii;
 
 /**
@@ -24,13 +25,26 @@ class PositionType extends \yii\db\ActiveRecord
         return 'position_types';
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => ManyToManyBehavior::className(),
+                'relations' => [
+                    'accountability_list' => 'accountabilities',
+                ],
+            ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['name'], 'string', 'max' => 64]
+            [['name'], 'string', 'max' => 64],
+            [['accountability_list'], 'safe']
         ];
     }
 
@@ -78,4 +92,5 @@ class PositionType extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Position::className(), ['type_id' => 'id']);
     }
+
 }

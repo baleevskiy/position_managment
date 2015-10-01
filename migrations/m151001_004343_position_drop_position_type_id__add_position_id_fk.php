@@ -20,7 +20,7 @@ class m151001_004343_position_drop_position_type_id__add_position_id_fk extends 
         $this->dropColumn('employees', 'position_id');
         $this->addColumn('employees', 'position_type_id', $this->integer()->notNull());
         $this->update('employees',['position_type_id' => 2], []);
-        $this->addForeignKey('position_type_id', 'employees', 'position_type_id', 'position_types', 'id');
+        $this->addForeignKey('position_fk', 'employees', 'position_type_id', 'position_types', 'id');
         return true;
     }
 
